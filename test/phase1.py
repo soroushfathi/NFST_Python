@@ -1,8 +1,7 @@
 import time
-from fstpy import (
-    add_state, add_transition, add_set_transition,
-    Machine, Progress,
-    transitions, states, machine
+from sfst.__init__ import (
+    add_state, add_transition, Machine, Progress,
+    transitions, states
 )
 
 if __name__ == '__main__':

@@ -1,10 +1,8 @@
 import time
 
-from fstpy import (
-    add_state, add_transition, add_set_transition, print, console, custom_theme,
-    Machine, Progress,
-    transitions, states, machine,
-)
+from sfst.__init__ import (
+    add_state, add_transition, add_set_transition, console, Machine, Progress,
+    transitions, states, )
 
 if __name__ == '__main__':
     console.rule('[bold red]🚀Start Parsing FST')
