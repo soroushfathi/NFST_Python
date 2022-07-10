@@ -62,6 +62,6 @@ if __name__ == '__main__':
         while not progress.finished:
             progress.update(task, advance=0.8)
             time.sleep(0.003)
-    # machine.parse_input('wolf')
-    machine.parse_input('cat')
+    machine.parse_input('wolf')
+    # machine.parse_input('cat')
     # machine.parse_input('house')

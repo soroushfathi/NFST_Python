@@ -7,20 +7,35 @@ from fstpy import (
 
 if __name__ == '__main__':
     q_0 = add_state('q0', False)
-    q_1 = add_state('q1', False)
-    q_final = add_state('q_final', True)
+    q_final = add_state('qfinal', True)
 
-    add_transition(q_0, 's', 's', q_1)
-    add_transition(q_1, 'λ', 'λ', q_final)
-    add_transition(q_1, 's', 'λ', q_final)
-
-    add_set_transition(q_0, "abcdefghijklmnopqrstuvwxyz", q_0)
-    add_set_transition(q_0, "abcdefghijklmnopqrtuvwxyz", q_final)
+    add_transition(q_0, "a", "λ", q_0)
+    add_transition(q_0, "b", "b", q_0)
+    add_transition(q_0, "a", "λ", q_final)
+    add_transition(q_0, "λ", "λ", q_final)
 
     input_alphabet = 'abcdefghijklmnopqrstuvwxyz'
     output_alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
     machine = Machine(transitions, input_alphabet, output_alphabet, q_0, states)
+    # machine.parse_input('abbbab')
+    # machine.parse_input('bbb')
+
+    # q_0 = add_state('q0', False)
+    # q_1 = add_state('q1', False)
+    # q_final = add_state('q_final', True)
+    #
+    # add_transition(q_0, 's', 's', q_1)
+    # add_transition(q_1, 'λ', 'λ', q_final)
+    # add_transition(q_1, 's', 'λ', q_final)
+    #
+    # add_set_transition(q_0, "abcdefghijklmnopqrstuvwxyz", q_0)
+    # add_set_transition(q_0, "abcdefghijklmnopqrtuvwxyz", q_final)
+    #
+    # input_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    # output_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    #
+    # machine = Machine(transitions, input_alphabet, output_alphabet, q_0, states)
     # machine.parse_input('sun')
     # machine.parse_input('samsung')
     # machine.parse_input('buss')
@@ -31,4 +46,5 @@ if __name__ == '__main__':
         while not progress.finished:
             time.sleep(0.003)
             progress.update(task, advance=0.9)
-    machine.parse_input('sun')
+    # machine.parse_input('sun')
+    machine.parse_input('abbbab')
